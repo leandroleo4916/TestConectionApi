@@ -14,6 +14,7 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+        tools:listitem="@layout/recycler_list"
         tools:ignore="MissingConstraints"/>
 
     <com.google.android.material.appbar.AppBarLayout
