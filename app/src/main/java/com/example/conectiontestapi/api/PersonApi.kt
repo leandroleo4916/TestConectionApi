@@ -6,7 +6,7 @@ data class PersonApi(
     @SerializedName("name")
     val name: String,
     @SerializedName("species")
-    val species:String,
+    val species: String,
     @SerializedName("gender")
     val gender: String,
     @SerializedName("house")
@@ -31,4 +31,5 @@ data class PersonApi(
     val alive: Boolean,
     @SerializedName("image")
     val image: String
+
 )
