@@ -1,6 +1,7 @@
 package com.example.conectiontestapi.model
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.conectiontestapi.R
+import com.example.conectiontestapi.activity.ProfileActivity
 import com.example.conectiontestapi.api.PersonApi
 
 class AdapterPotter(private val context: Context, private val listPotter: List<PersonApi>)
@@ -33,6 +35,15 @@ class AdapterPotter(private val context: Context, private val listPotter: List<P
         val https = (wordAdd + subString)
 
         Glide.with(context).load(https).into(holder.image)
+
+        holder.itemView.setOnClickListener {
+
+            val intent = Intent(context, ProfileActivity::class.java)
+            intent.putExtra("id", position)
+            intent.putExtra("name", list.name)
+            context.startActivities(arrayOf(intent))
+        }
+
     }
 
     override fun getItemCount(): Int {

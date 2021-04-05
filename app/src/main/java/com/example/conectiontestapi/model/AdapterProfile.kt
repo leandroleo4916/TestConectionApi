@@ -23,7 +23,16 @@ class AdapterProfile(private val context: Context, private val listPerson: List<
     }
 
     override fun onBindViewHolder(holder: ViewHolderProfile, position: Int) {
-        val view = listPerson[position]
+        val list = listPerson[position]
+
+        holder.nameId.text = list.name
+        holder.sex.text = list.gender
+        holder.actor.text = list.actor
+        holder.birth.text = list.dateOfBirth
+        holder.species.text = list.species
+        holder.house.text = list.house
+        holder.eye.text = list.eyeColour
+        holder.ancestry.text = list.ancestry
 
     }
 
