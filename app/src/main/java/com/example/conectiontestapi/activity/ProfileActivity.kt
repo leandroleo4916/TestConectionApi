@@ -3,6 +3,7 @@ package com.example.conectiontestapi.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -61,7 +62,7 @@ class ProfileActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<List<PersonApi>>, t: Throwable) {
-                TODO("Not yet implemented")
+                Toast.makeText(this@ProfileActivity, t.message, Toast.LENGTH_LONG).show()
             }
 
         })
