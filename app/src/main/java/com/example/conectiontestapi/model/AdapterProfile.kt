@@ -23,17 +23,7 @@ class AdapterProfile(private val context: Context, private val listPerson: List<
     }
 
     override fun onBindViewHolder(holder: ViewHolderProfile, position: Int) {
-        val list = listPerson[position]
-
-        holder.name.text = list.name
-        holder.birth.text = list.dateOfBirth
-
-        val wordAdd = "https"
-        val itemS = list.image
-        val subString = itemS.removeRange(0, 4)
-        val https = (wordAdd + subString)
-
-        Glide.with(context).load(https).into(holder.image)
+        val view = listPerson[position]
 
     }
 
@@ -43,7 +33,12 @@ class AdapterProfile(private val context: Context, private val listPerson: List<
 }
 
 class ViewHolderProfile(itemView: View): RecyclerView.ViewHolder(itemView){
-    val image: ImageView = itemView.findViewById(R.id.icon_image)
-    val name: TextView = itemView.findViewById(R.id.text_name_id)
-    val birth: TextView = itemView.findViewById(R.id.text_birth_id)
+    val nameId: TextView = itemView.findViewById(R.id.text_name)
+    val sex: TextView = itemView.findViewById(R.id.text_sexo)
+    val actor: TextView = itemView.findViewById(R.id.text_actor)
+    val birth: TextView = itemView.findViewById(R.id.text_birth)
+    val species: TextView = itemView.findViewById(R.id.text_species)
+    val house: TextView = itemView.findViewById(R.id.text_house)
+    val eye: TextView = itemView.findViewById(R.id.text_eye)
+    val ancestry: TextView = itemView.findViewById(R.id.text_ancestry)
 }
