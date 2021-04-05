@@ -41,7 +41,7 @@ class ProfileActivity : AppCompatActivity() {
         call.enqueue(object: Callback<List<PersonApi>>{
             override fun onResponse(call: Call<List<PersonApi>>, response: Response<List<PersonApi>>) {
                 val adapter = AdapterProfile(this@ProfileActivity, response.body()!!.toList())
-
+                recyclerView.adapter = adapter
             }
 
             override fun onFailure(call: Call<List<PersonApi>>, t: Throwable) {

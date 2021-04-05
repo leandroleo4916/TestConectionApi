@@ -25,7 +25,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         setSupportActionBar(findViewById<View>(R.id.toolbar) as Toolbar)
-        //esconde icone voltar na toolbar
         supportActionBar!!.setDisplayHomeAsUpEnabled(false)
 
         recyclerView = findViewById(R.id.recycler_potter)
